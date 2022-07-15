@@ -1,0 +1,1 @@
+puts /\A[A-Z]+\z/.match?(gets.chomp) ? 'A' : 'a'
