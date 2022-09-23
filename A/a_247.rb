@@ -1,2 +1,2 @@
 s = gets
-puts "0" + s.slice(0..2)
+puts '0' + s.slice(0..2)
