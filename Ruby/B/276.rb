@@ -1,16 +1,10 @@
 n, m = gets.split.map(&:to_i)
-a = m.times.map { gets.split.map(&:to_i) }
+arr = n.times.map { [] }
 
-res = []
-n.times do |i|
-  line = []
-  count = []
-  a.each do |j|
-    if j.include?(i+1)
-      count << 1
-      line << j.reject { |elm| elm == i+1 }
-    end
-  end
-  res << [count.sum, line.sort].join(' ')
+m.times do
+  x, y = gets.split.map(&:to_i)
+  arr[x-1] << y
+  arr[y-1] << x
 end
-puts res
+
+puts arr.map { [_1.size, _1.sort].join(' ') }
