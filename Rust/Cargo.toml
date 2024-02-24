@@ -6,3 +6,5 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+# https://docs.rs/proconio/latest/proconio/#macros
+proconio = "0.4.3"
