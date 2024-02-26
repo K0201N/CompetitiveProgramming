@@ -1,1 +1,1 @@
-/Users/k/Atcoder/Rust/target/debug/a1: /Users/k/Atcoder/Rust/src/bin/a1.rs
+/Users/k/CompetitiveProgramming/Rust/target/debug/a1: /Users/k/CompetitiveProgramming/Rust/src/bin/a1.rs
