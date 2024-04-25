@@ -1,19 +1,24 @@
-n = gets.to_i
-x = n.times.map { gets.split.map(&:to_i) }
-q = gets.to_i
-y = q.times.map { gets.split.map(&:to_i) }
+student_count = gets.to_i
+class1_cumulative_scores = Array.new(student_count + 1, 0)
+class2_cumulative_scores = Array.new(student_count + 1, 0)
 
-set1 = Array.new(y.size) { [] }
-set2 = Array.new(y.size) { [] }
+(1..student_count).each do |i|
+  class_type, score = gets.split.map(&:to_i)
+  class1_cumulative_scores[i] = class1_cumulative_scores[i - 1]
+  class2_cumulative_scores[i] = class2_cumulative_scores[i - 1]
 
-(y.size).times do |i|
-  x[(y[i][0]-1)...y[i][1]].each do |j|
-    case j[0]
-    when 1
-      set1[i] << j[1]
-    when 2
-      set2[i] << j[1]
-    end
+  if class_type == 1
+    class1_cumulative_scores[i] += score
+  elsif class_type == 2
+    class2_cumulative_scores[i] += score
   end
-  puts "#{set1[i].sum} #{set2[i].sum}"
+end
+
+query = gets.to_i
+query.times do
+  left, right = gets.split.map(&:to_i)
+  class1_score_sum = class1_cumulative_scores[right] - class1_cumulative_scores[left - 1]
+  class2_score_sum = class2_cumulative_scores[right] - class2_cumulative_scores[left - 1]
+
+  puts "#{class1_score_sum} #{class2_score_sum}"
 end
