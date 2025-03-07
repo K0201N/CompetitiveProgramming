@@ -1,0 +1,1 @@
+puts gets.to_i.times.flat_map { gets.chomp.split }.sort_by(&:size).join
