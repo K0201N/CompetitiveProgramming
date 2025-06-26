@@ -7,17 +7,17 @@ int main()
     int query;
     cin >> query;
 
-    queue<int> queue;
+    queue<int> q;
 
     for (int i = 0; i < query; i++) {
         int n, x;
         cin >> n;
         if (n == 1) {
             cin >> x;
-            queue.push(x);
+            q.push(x);
         } else if (n == 2) {
-            cout << queue.front() << endl;
-            queue.pop();
+            cout << q.front() << endl;
+            q.pop();
         }
     }
 }
