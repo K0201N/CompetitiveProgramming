@@ -12,6 +12,8 @@ def binary_search(arr, target)
       right = mid - 1
     end
   end
+
+  nil
 end
 
 _n, target = gets.split.map(&:to_i)
