@@ -1,8 +1,8 @@
 import * as fs from 'fs';
 
-const n: Number = +fs.readFileSync('/dev/stdin', 'utf-8');
+const n: number = +fs.readFileSync('/dev/stdin', 'utf-8');
 
-function result(n: Number): Number {
+function result(n: number): number {
   let ans = 0
   for (let i = 0; i < n; i++) {
     ans += i+1;
